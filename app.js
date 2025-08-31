@@ -43,3 +43,12 @@ function sortearAmigo() {
   li.textContent = `Amigo sorteado: ${nombreSorteado}`;
   resultado.appendChild(li);
 }
+
+// Detectar la tecla Enter en el campo de texto
+document.getElementById("amigo").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Evita que el formulario se envíe si lo hay
+    agregarAmigo(); // Llama a la misma función que el botón
+  }
+});
+
