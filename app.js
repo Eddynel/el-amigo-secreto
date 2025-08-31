@@ -3,7 +3,7 @@ let listaDeAmigos = [];
 
 function agregarAmigo() {
   const input = document.getElementById("amigo");
-  const nombre = input.value.trim(); // ← corregido: antes usabas ariaValueMax
+  const nombre = input.value.trim(); // ← corregido trim para eliminar espacios en blanco
 
   if (nombre === "") {
     alert("Por favor, inserte un nombre.");
@@ -13,7 +13,7 @@ function agregarAmigo() {
   listaDeAmigos.push(nombre);
   input.value = "";
 
-  mostrarLista(); // ← esta llamada es clave para que se actualice la lista visual
+  mostrarLista(); // ← esta llamada es para que se actualice la lista visual
 }
 
 function mostrarLista() {
@@ -29,7 +29,7 @@ function mostrarLista() {
 
 function sortearAmigo() {
   const resultado = document.getElementById("resultado");
-  resultado.innerHTML = ""; // ← corregido: antes decía inertHTML
+  resultado.innerHTML = ""; 
 
   if (listaDeAmigos.length < 2) {
     alert("Debe haber al menos dos amigos en la lista para sortear.");
